@@ -4,6 +4,10 @@ namespace App\Helpers;
 
 class UserHelper
 {
+    const OBJECTS = 'objects';
+    const EMAIL = 'correo';
+    const DOCUMENT = 'cedula';
+
     /**
      * @param array $arrayUsers
      * @param string $word
@@ -11,8 +15,8 @@ class UserHelper
      */
     public static function searchUser(array $arrayUsers, string $word)
     {
-        foreach ($arrayUsers['objects'] as $user){
-            if($user['correo'] == $word || $user['cedula'] == $word)
+        foreach ($arrayUsers[self::OBJECTS] as $user){
+            if($user[self::EMAIL] == $word || $user[self::DOCUMENT] == $word)
                 return $user;
         }
 
