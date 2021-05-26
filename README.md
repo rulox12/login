@@ -28,21 +28,19 @@ DB_PASSWORD = password
 
 ## Creation of the database
 
-Initially you must enter the mysql server through the console or through an IDE for mysql
 ```
-mysql -u root -p
-Enter user password
+php config/migration.php
 ```
-
-Once we are inside the mysql server, we must execute the file that we will find in the path /config/migration.sql, for example in my case it would be
+The following message will come out
 
 ```
-source /Users/danielbetancurvillada/dbv/login/config/migration.sql
+Se ejecuto correctamente la migracion
 ```
 
 ## Run the project
 
 In this case we are going to stop our local server on port 8080
 ```
+cd public
 php -S 127.0.0.1:8080
 ```
