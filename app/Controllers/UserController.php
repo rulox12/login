@@ -65,8 +65,12 @@ class UserController extends Controller
             ]);
         }
 
+        $user = CreateOrUpdateUserAction::execute($data, new User());
+
+        $this->session->add('user',$user);
+
         $this->render(__CLASS__, 'show', [
-            'user' => CreateOrUpdateUserAction::execute($data, new User())
+            'user' => $user
         ]);
     }
 
